@@ -8,6 +8,11 @@ int main(){
   if (age >= 18){
     printf("You are eligible for a license.\n");
   }
+
+  if (NULL){ // NULL is the falsy value
+    printf("This is never going to be printed");
+  }
+  
   printf("Your age is: %d.\n", age);
   return 0;
 }
