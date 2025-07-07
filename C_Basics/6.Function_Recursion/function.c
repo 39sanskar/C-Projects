@@ -30,11 +30,17 @@ int main(){
   count_to_100(); // function Call
   int add = sum(4, 5); // function call
   printf("the sum is: %d\n", add);
+
+  
+  int x = 9;
+  int y = 54;
+  int z = sum(x, y);
+  printf("The sum is: %d\n", z);
   return 0;
 }
 
 void count_to_100(){ // Function Definition
-  for (int i = 1; i<100; i++) {
+  for (int i = 1; i<10; i++) {
     printf("%d\n", i);
   }
 }
@@ -52,4 +58,9 @@ Return Statement
 3. Return ends the function immediately.
 4. Function calls make code jump around.
 5. Prefer returning values over using global variables.
+*/
+
+/*
+1. Parameters: Variables in a function definition, acting as placeholders.
+2. Arguments: Actual values passed to a function at call time.
 */
