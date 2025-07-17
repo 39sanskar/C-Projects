@@ -55,6 +55,7 @@ void swap(int* ptr1, int* ptr2){
   *ptr1, *ptr2);
 }
 
+// In this program, the addresses of x and y are passed to the swap function by value, so the function receives copies of the addresses. Using these pointers, the function can access and modify the original variables
 /*
 
 | Concept           | Explanation                                                          |
