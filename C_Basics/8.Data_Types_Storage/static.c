@@ -1,4 +1,6 @@
 /*
+Static variable is initialise only one time. its life is not defined with the function.
+
 Static variable is not store in the stack.
 1. Persistence: static variables retain their value between function calls.
 2. Initialization: Automatically initialized to zero if no initial value is provided.
@@ -12,7 +14,7 @@ the file they are declared in, not externally.
 #include <stdio.h>
 void incrementCounter(){
   // A static variable retains its value between function calls
-  static int counter = 0;
+  static int counter = 0; // it is global and its value is not change again and again
   counter++;
   printf("Counter is %d\n", counter);
 }
