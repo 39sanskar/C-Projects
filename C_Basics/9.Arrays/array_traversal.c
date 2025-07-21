@@ -8,8 +8,13 @@
 
 #include <stdio.h>
 int main(){
-  int arr_size = 5;
-  int marks[5] = {90, 94, 91, 96, 100};
+  int arr_size = 10;
+  int marks[10];
+
+  for(int i = 0; i < arr_size; i++){
+    printf("Please enter marks for Students %d: ", (i + 1));
+    scanf(" %d", &marks[i]);
+  }
 
   for (int i = 0; i < arr_size; i++){
     printf("Marks of Student %d are: %d\n", (i + 1), marks[i]);
