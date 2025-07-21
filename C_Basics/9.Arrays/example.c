@@ -4,10 +4,14 @@
 int sumArray(int arr[], int size);
 int main(){
   int myArray[] = {1, 2, 3, 4, 5};
-  int size = sizeof(myArray) / sizeof(myArray[0]);
+  int size =  sizeof(myArray) / sizeof(myArray[0]);
   // Pass array and size to the function
   int total = sumArray(myArray, size);
-  printf("The sum of the array elements is: %d\n", total);return 0;
+  printf("The sum of the array elements is: %d\n", total);
+  printf("%lu\n",sizeof(myArray[0])); 
+  printf("%lu\n",sizeof(myArray));
+  printf("%d\n", size);
+  return 0;
 }
 
 // Function to calculate the sum of an array's elements
