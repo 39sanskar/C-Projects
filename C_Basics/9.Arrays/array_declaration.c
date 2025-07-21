@@ -18,7 +18,7 @@ Index is always start from zero.
 */
 #include <stdio.h>
 int main(){
-  int marks[5];
+  int marks[5]; // this is the array declaration.
   printf("Please enter marks for Student 1: ");
   scanf(" %d", &marks[0]);
   printf("Please enter marks for Student 2: ");
