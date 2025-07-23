@@ -17,3 +17,15 @@ int main() {
   }
   return 0;
 }
+
+
+/*
+Multi-Dimensional Array
+
+1. Generalization: Extend two-dimensional arrays to more dimensions, like 3D for cubes or higher .
+2. Declaration: Specify each dimension, e.g., int arr[2][3][4] for a 3D array.
+3. Initialization: Nested braces for dimensions, e.g., int arr[2][2][2] = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};.
+4. Element Access: Use indices for each dimension, e.g., arr[1][0][1] for a 3D array element.
+5. Row-major Order: Memory layout continues with elements stored in contiguous locations, dimension by dimension.
+
+*/
