@@ -20,6 +20,7 @@ int main() {
   print_student(student);
   printf("\nRollNo: %d, Name: %s, Marks: %.2f", student.rollno, student.name, student.marks);
   
+  // Changes in the function affect the original only when passed by address.
   print_student_from_pointer(stu_ptr);
   printf("\nRollNo: %d, Name: %s, Marks: %.2f", student.rollno, student.name, student.marks);
   printf("\n");
