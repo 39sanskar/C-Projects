@@ -58,9 +58,9 @@ Perform case-sensitive comparison
 /*
 Output:
 
-Comparing 'apple' with 'banana': -1
-Comparing 'cherry' with 'banana':1
-Comparing 'date' with 'date': 0
+Comparing 'apple' with 'banana': -1 (first string(apple) come first)
+Comparing 'cherry' with 'banana':1 (second string(banana) come first)
+Comparing 'date' with 'date': 0 (Both string is same)
 */
 
 /*
