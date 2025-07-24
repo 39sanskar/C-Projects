@@ -33,8 +33,13 @@ int main(){
   printf("\nRollNo: %d, Name: %s, Marks: %.2f", student.rollno, student.name, student.marks);
 
   // using pointer 
-  struct Student *str_ptr = &student;
-  printf("\nRollNo: %d, Name: %s, Marks: %.2f", (*str_ptr).rollno, (*str_ptr).name, (*str_ptr).marks);
+  struct Student *stu_ptr = &student;
+  printf("\nRollNo: %d, Name: %s, Marks: %.2f", (*stu_ptr).rollno, (*stu_ptr).name, (*stu_ptr).marks);
+  
+
+  // Using Arrow Operator(->)
+  printf("\nRollNo: %d, Name: %s, marks: %.2f", stu_ptr->rollno, stu_ptr->name, stu_ptr->marks);
   printf("\n");
 
+  return 0;
 }
