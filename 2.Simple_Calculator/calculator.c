@@ -17,7 +17,7 @@ long long factorial(int);
 void print_menu();
 
 double toRadians(double degrees) {
-    return degrees * M_PI / 180.0;
+  return degrees * M_PI / 180.0;
 }
 
 int main() {
@@ -44,34 +44,34 @@ int main() {
             continue; // Go back to the menu
         }
 
-        if(choice == 18) {
+        if(choice == 19) {
           printf(GREEN "\nExiting... Thank you for using the calculator!\n" RESET);
           break;
         }
 
-        if(choice < 1 || choice > 18) {
+        if(choice < 1 || choice > 19) {
           fprintf(stderr, RED "Invalid Menu Choice.\n" RESET);
           continue;
         }
         // Memory functions
-        if (choice == 15) { // Memory Store
+        if (choice == 16) { // Memory Store
             memory = result;
             printf(GREEN "Stored %.6f in memory.\n" RESET, memory);
             continue;
         }
-        if (choice == 16) { // Memory Recall
+        if (choice == 17) { // Memory Recall
             printf(GREEN "Recalled value from memory: %.6f\n" RESET, memory);
             result = memory;
             continue;
         }
-        if (choice == 17) { // Memory Clear
+        if (choice == 18) { // Memory Clear
             memory = 0;
             printf(GREEN "Memory cleared.\n" RESET);
             continue;
         }
 
         // One-number operations
-        if (choice >= 7 && choice <= 14) {
+        if (choice >= 7 && choice <= 15) {
            printf("\nEnter the number: ");
            scanf("%lf", &first);
 
@@ -81,7 +81,7 @@ int main() {
                       fprintf(stderr, RED "Square root of negative number is not possible!\n" RESET);
                       continue;
                     }
-                    result = sqrt(first);
+                    result = sqrt(first);   // Square Root 
                     break;
                 case 8: // Factorial
                     if(first < 0 || floor(first) != first) {
@@ -108,6 +108,7 @@ int main() {
                     result = log(first);
                     break;
                 case 14: result = cbrt(first); break; // Cube root
+                case 15: result = exp(first); break; // NEW e^x
             }
             printf(GREEN "\nResult: %.6f\n" RESET, result);
             continue;
@@ -130,6 +131,8 @@ int main() {
         if(!isnan(result)) { 
           // !isnan(result) → means "only proceed if result is not NaN". (NAN => it is Not a Number.)
           printf(GREEN "\nResult: %.6f\n" RESET, result);
+        } else {
+          printf(RED "\nError: Invalid mathematical operation (NaN)\n" RESET);
         }
     }
 
@@ -177,10 +180,11 @@ void print_menu() {
   printf(YELLOW "12. Logarithm base 10\n" RESET);
   printf(YELLOW "13. Natural Log (ln)\n" RESET);
   printf(YELLOW "14. Cube Root\n" RESET);
-  printf(YELLOW "15. Memory Store (MS)\n" RESET);
-  printf(YELLOW "16. Memory Recall (MR)\n" RESET);
-  printf(YELLOW "17. Memory Clear (MC)\n" RESET);
-  printf(YELLOW "18. Exit\n" RESET);
+  printf(YELLOW "15. e^x\n" RESET);
+  printf(YELLOW "16. Memory Store (MS)\n" RESET);
+  printf(YELLOW "17. Memory Recall (MR)\n" RESET);
+  printf(YELLOW "18. Memory Clear (MC)\n" RESET);
+  printf(YELLOW "19. Exit\n" RESET);
   printf(CYAN "Enter your choice: " RESET);
 }
 
@@ -202,4 +206,34 @@ M_PI → A constant from math.h representing π (≈ 3.141592653589793).
 180.0 → Using .0 ensures it's a floating-point division, not integer division.
 Multiplying degrees by M_PI / 180.0 changes them into radians.
 
+*/
+
+/*
+if (!isnan(result)) { 
+    // !isnan(result) → means "only proceed if result is not NaN". (NaN => Not a Number.)
+    printf(GREEN "\nResult: %.6f\n" RESET, result);
+}
+
+Here’s what’s happening step-by-step:
+1.isnan(result)
+  -Comes from <math.h>.
+  -Returns true (1) if result is NaN (Not a Number).
+  -NaN happens in C when an operation’s result is undefined  for example:
+
+  double x = 0.0 / 0.0;  // produces NaN
+
+2. !isnan(result)
+  -This is the negation of isnan(result).
+  -Means “proceed only if result is not NaN”.  
+
+3. Why it’s useful in your calculator
+  -Prevents printing meaningless results when math fails, like dividing 0/0 or sqrt(-1) in real numbers.
+  -Instead, you could also add an else to display an error message:
+
+  if (!isnan(result)) {
+    printf(GREEN "\nResult: %.6f\n" RESET, result);
+  } else {
+    printf(RED "\nError: Invalid mathematical operation (NaN)\n" RESET);
+  }
+  
 */
