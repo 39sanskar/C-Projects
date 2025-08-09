@@ -30,8 +30,9 @@ int main(){
   /*
   random → will store the secret number the user has to guess.
   guess → will store the number entered by the user.
-  no_of_guess → keeps track of how many guesses the user made.
+  attempts → keeps track of how many guesses the user made.
   */
+ 
   // Seed random number generator
   srand(time(NULL));
   /*
